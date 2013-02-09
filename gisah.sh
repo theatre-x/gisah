@@ -76,6 +76,7 @@ function macchange {
 		echo "Ayup, Macchanger exists, skipping installer..."
 	else
 		echo "Darn, Macchanger doesn't exist, initializing installer...";
+sudo apt-get install macchanger;
 fi
 
 # Check for package manager
