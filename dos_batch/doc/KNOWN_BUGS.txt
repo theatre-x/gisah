@@ -1,0 +1,12 @@
+Mozilla browser cleaners ~
+
+In order to delete the history, it seems that "places.sqlite" needs to 
+be deleted. But deleting it deletes bookmarks.
+
+Windows 2000 ~
+
+In the gisah.bat script, Windows 2000 must be first in the list
+otherwise, GISAH will just go through the list and ignore the findstr functions.
+
+The "Drop to Command Prompt" command gives a "Syntax is incorrect" error
+with "cd /" and drops to CMD without going to the current volume.
