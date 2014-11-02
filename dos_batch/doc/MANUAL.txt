@@ -1,0 +1,262 @@
+********************************
+GISAH Manual
+(Windows/MS-DOS) v1.0
+
+********************************
+
+^V^V^V^V^V^V^V^V^V^V^V^V^
+Table of Contents:
+^V^V^V^V^V^V^V^V^V^V^V^V^
+
+I. Introduction
+	1.1 - About
+	1.2 - A brief history
+
+II. The legal stuff
+	2.1 - License
+
+III. How to use
+	3.1 - Launching
+	3.2 - Selecting options
+
+IV. Under the hood
+	4.1 - From the get go
+	4.1/2 - TUI
+	4.2 - Main menu
+	4.3 - Cleaning menu
+		4.3.1 - How the cleaners work
+	4.4 - Self Cleaning
+	4.5 - Launch Windows Tools
+	4.6 - GISAH System Tools
+		4.6.1 - Find Missing System Filess
+			4.6.1.1 - 9x/ME
+			4.6.1.1 - NT
+	4.7 - Launch Cygwin
+	4.8 - Networking Tools
+		4.8.1 - Ping Outside LAN
+	4.9 - Drop to CMD
+	4.10 - Hardware Testing
+		4.10.1 - Monitor testing
+	4.11 - Help
+	4.12 - About
+	4.13 - System Specifications
+	4.14 - Power menu
+	4.15 - GISAH Algorithms
+
+======================================================================================================================================================================
+I - Introduction
+======================================================================================================================================================================
+
+1.1 - About
+		GISAH is a recursive acronym. It stands for "GISAH Is Simple As Hell" (Guy-zuh). The program acts as a janitor, doctor, server (As in "I'll do whatever you tell me to"),and technician by cleaning junk files (Janitor), testing various parts of your hardware and operating system (doctor), allows one to call upon various system programs (server), and repairing certain aspects of your operating system. The whole program [Windows/MS-DOS] is written in DOS Batch and is under the GNU General Public License version 3.
+
+
+1.2 - A brief history (Written by the author)
+		GISAH was written initially to improve my train of thought with problem solving with programming. I wrote it in DOS Batch for a few reasons:
+
+A. It was very easy for me to get started with and I could understand the language's syntax.
+B. It made lightweight programs.
+C. It's an interpreted language rather than a compiled language.
+D. It's easy to write instructions.
+E. No need for special interpreters, compilers, etc.
+
+		So those were the reasons. The name stems from the simplicity of the interface, simplicity of the way the scripts and the program is packaged (i.e. easy to find where things are in the GISAH directory), and the simplicity of the syntax.
+
+
+======================================================================================================================================================================
+II - The legal stuff
+======================================================================================================================================================================
+
+2.1 - License
+
+^V^V^V^V^V^V^V^V^V^V^V^V^
+GISAH License:
+^V^V^V^V^V^V^V^V^V^V^V^V^
+
+<GISAH>
+Copyright (C) <2012>  <Brandon Smith>
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>."
+
+^V^V^V^V^V^V^V^V^V^V^V^V^
+Manual License:
+^V^V^V^V^V^V^V^V^V^V^V^V^
+
+Copyright (C) 2012 Brandon Smith
+	Permission is granted to copy, distribute and/or modify this document
+	under the terms of the GNU Free Documentation License, Version 1.3
+	or any later version published by the Free Software Foundation;
+	with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+	A copy of the license is included in the section entitled "GNU
+	Free Documentation License".
+
+^V^V^V^V^V^V^V^V^V^V^V^V^
+Cygwin License:
+^V^V^V^V^V^V^V^V^V^V^V^V^
+
+Cygwin™ is free software. Red Hat, Inc. licenses Cygwin to you under the terms of the GNU General Public License as published by the Free Software Foundation; you can redistribute it and/or modify it under the terms of the GNU General Public License either version 3 of the license, or (at your option) any later version (GPLv3+), along with the additional permissions given below.
+
+There is NO WARRANTY for this software, express or implied, including the implied warranties of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program. If not, see <http://gnu.org/licenses/>.
+
+======================================================================================================================================================================
+III - How to use
+======================================================================================================================================================================
+
+3.1 - Launching
+
+	To launch (execute, run, whatever.) GISAH, select the "gisah.bat" file in the root of the GISAH directory.
+
+----------------------------------
+
+3.2 - Selecting options
+
+	GISAH's menus, if not letters, use Roman numerals. To select an option, press the corresponding number or letter on your keyboard next to the option you want. For example, say you want to select the "Self-cleaning" menu:
+
+======================================================================================================================================================================
+IV - Under the Hood
+======================================================================================================================================================================
+
+4.1 - From the get go
+
+	Right from when you launch the gisah.bat file, the program uses a script that searches for the version of MS-DOS your computer is running. It associates that version with the operating system that that version generally corresponds with. Once it finds what version of MS-DOS is running, a conditional statement happens that uses the "GOTO" command and goes to the line designated for your operating system.
+	Once this is done, GISAH uses Batch's "call" function to call the script that's associated with your operating system. If you were running GISAH on Windows XP for example, GISAH would call the Windows XP script from within the "OS" directory in the GISAH root directory.
+
+To illustrate:
+
+Person launches the GISAH.bat script > The GISAH.bat script searches and finds that you are using MS-DOS 6.0 > Since 6.0 is linked with Windows Vista, it goes to the Windows Vista line in the gisah.bat script > Calls Windows Vista menu.
+
+	If you are running GISAH on Windows 9x (95, 98) or ME, that script would fail on all the other finds and find the conditional statement that says "If [foobar] exists in the directory [X:\FOOBAR\, then go to this line". This was to help aid confusion with GISAH so it wouldn't call upon an incorrect version since the monolithic versions of Windows use MS-DOS 6.0 unlike Windows 2000 and Windows XP which, for some stupid reason, use MS-DOS 5.1.
+
+-------------------------------------------
+
+4.1/2 - TUI
+
+	The TUI is actually very simple. GISAH utilizes the "echo" command to print the designs on the screen. It also uses the "COLOR" command to change the colors of the background and font.
+
+-------------------------------------------
+
+4.2 - Main menu
+
+	On the main GISAH menu, a list which uses the "set" command, using a customly designed %CHOICE% command so that GISAH would work with the MS-DOS in Windows 2000 and XP because their versions don't have the "CHOICE" command. As a plus, the "set" function allows for different variables to be used when binding an option to a certain character. The options use roman numerals. They look a bit more spiffy than "1,2,3" and whatnot. The more "Technical", for lack of a better word, use letters. As said before, those letters are not case sensitive. When an option is selected, a conditional statement happens that uses the "GOTO" command and goes to a certain function, written like this:
+
+:[FOOBAR]
+
+But without the "[]" brackets.
+
+-------------------------------------------
+
+4.3 - Cleaning menu
+
+	GISAH's cleaning menu is the heart of the "Janitor" aspect of the program. GISAH uses the call functions to pull up the various menus and categories. The way they are categorized was influenced by the GNOME 2 desktop. Nice and clean I reckon.
+
+-------------------------------------------
+
+	4.3.1 - How the cleaners work
+
+		The cleaners use GISAH's algorithms (See 4.15 - GISAH Algorithms) to figure out the user's system. Depending on where a listed cleaning job option is on the volume of course. For example, if a cleaner has say, history, and it's located in the user's AppData folder, GISAH would first run the APPDATA algorithm. Once in the specified directory, the cleaners use the "del" function with a ".\" to tell GISAH to work in the current directory to remove the files. If one was to delete a web browser's Cache directory that had a few files plus some other cache directories in it, GISAH will remove the entire Cache directory then remake a new Cache directory. Don't worry, this method won't effect the software itself. Otherwise, it wouldn't have been used.
+
+-------------------------------------------
+
+4.4 - Self cleaning
+
+	GISAH's self-cleaning mechanism cleans GISAH's "logs" directory in the root of GISAH. It uses the same deletion methods as GISAH's cleaners.
+
+-------------------------------------------
+
+4.5 - Launch Windows Tools
+
+	The Windows Tools launcher menu helps users launch certain programs needed for repairing and/or configuring the operating system. Such as Windows' task manager (The same menu you get when you press "CTRL+ALT+DEL"), MSConfig (Helps with configuring startup and other parts of the OS), The Windows Defragmenter, and more.
+
+-------------------------------------------
+
+4.6 - GISAH System Tools
+
+	The GISAH System Tools section is tools created by GISAH users to fix various problems in Windows and MS-DOS.
+
+		4.6.1 - Find missing system files
+			
+			GISAH's "Find Missing System Files" tool searches the user's Windows volume for missing critical system files. This tool is still in development but is safe to use.
+
+			4.6.1.1 - 9x/ME
+
+				The "Find System Files" tools for Windows 9x/ME works by using the "if EXIST" command to look for needed files that Windows 9x/ME needs to operate and to pull itself up by the bootstraps. If one of the files is missing, GISAH will print a "[FAIL]" on the screen.
+
+			4.6.1.2 - NT
+
+				THe NT version looks for the System32 directory in the "Windows" directory as well as for Kernel32.dll. Too very important pieces. This tool is still in development but is safe to use.
+
+--------------------------------------------
+
+4.7 - Launch Cygwin
+
+	This feature searches the root of all the volumes for a Cygwin installation. Cygwin is a program that helps make Windows more GNU/Linux-like (See: http://en.wikipedia.org/wiki/Cygwin). If an installation is not found, GISAH will prompt the user if they would like to run the Cygwin installer included with GISAH (..\GISAH\extras).
+
+--------------------------------------------
+
+4.8 - Networking Tools
+
+	The networking tools section in GISAH lets users test their network with an assortment of tools. Note though that this section is still in development.
+
+		4.8.1 - Ping outside LAN
+
+			This feature uses the "Ping" command to send packets to google.com. This helps test if the user has Internet connectivity.
+
+--------------------------------------------
+
+4.9 - Drop to CMD
+
+	This option quits GISAH and drops the user down to the MS-DOS Command Prompt.
+
+--------------------------------------------
+
+4.10 - Hardware Testing
+
+	GISAH's "Hardware Testing" menu is still under development. This menu lets users test various parts of their computer.
+
+		4.10.1 - Monitor Testing
+
+			GISAH's Monitor Testing turns the window that GISAH is running in to different colors: Red, Green, Blue by using the "color" command. The main composite colors to test whether or not all the colors work on the monitor.
+
+--------------------------------------------
+
+4.11 - Help
+
+	The help menu list various options to help users with questions they may have before asking them on GISAH's Launchpad page.
+
+--------------------------------------------
+
+4.12 - About
+
+	The "About" menu displays the license and copyright of the author of GISAH, using the "echo" command".
+
+--------------------------------------------
+
+4.13 - System Specifications
+
+	The "System Specifications" menu lists the Memory and CPU specifications of the machine GISAH is running on. This uses the "mem" and two "set" commands: NUMBER_OF_PROCESSORS which lists how many CPUs reside in the machine and PROCESSOR_ARCHITECTURE which displays what kind of CPU is in the machine.
+
+--------------------------------------------
+
+4.14 - Power Menu
+
+	The "Power Menu" lists options for the user to help with shutting down or rebooting a machine. This proves useful when working inside MS-DOS and not Windows by making it easier to execute the shutdown and reboot commands with the press of a button. 
+
+--------------------------------------------
+
+4.15 - GISAH Algorithms
+
+	GISAH's algorithms work by gathering information about the machine it's running on, mainly using the "SET" command. GISAH then echoes the information into another document which gets called upon by GISAH. This helps with navigating to correct directories on another drive and utilizing other commands that would bog up another piece of GISAH's source code.
+
+==================================================
