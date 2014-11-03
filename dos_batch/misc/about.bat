@@ -23,9 +23,9 @@ rem =======================================================
 
 echo *******************************************************
 echo +++++++++++++++++++++++++++++++++++++++++++++++++++++++
-echo   GISAH 0.2.1
+echo   GISAH 0.2.2
 echo   "GISAH stands for "Gisah is simple as hell", a multi-purpose tool for Windows and MS-DOS.
-echo   Copyright (C) 2012  Brandon Smith
+echo   Copyright (C) 2014  Brandon Smith
 echo   This program is free software: you can redistribute it and/or modify
 echo   it under the terms of the GNU General Public License as published by
 echo   the Free Software Foundation, either version 3 of the License, or any later version."
