@@ -3,7 +3,7 @@ gisah
 
 System Optimizer
 
-This tool is meant for machines that run Windows 95, 98, ME, or 2000. I still work on machines that have this operating systems and most of the tools that I usually use aren't compatible. So I built one.
+This tool is meant for machines that run Windows 95, 98, ME, or 2000. I still work on machines that have these operating systems and most of the tools that I usually use aren't compatible. So I built one.
 
 GISAH
 Copyright (C) 2014  Theatre-X
