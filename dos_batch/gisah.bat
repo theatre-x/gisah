@@ -19,23 +19,19 @@ title GISAH: GISAH Is Simple As Hell
 
 rem ==============================================================================
 
+ver | findstr /i "6\.1\." > nul
+IF %ERRORLEVEL% EQU 0 goto :Other_windows
+
 ver | findstr /i "5\.0\." > nul
 IF %ERRORLEVEL% EQU 0 goto :win_2000
 
-ver | findstr /i "5\.1\." > nul
-IF %ERRORLEVEL% EQU 0 goto :win_XP
-
-ver | findstr /i "5\.2\." > nul
-IF %ERRORLEVEL% EQU 0 goto :win_serv_2003
-
-ver | findstr /i "6\.0\." > nul
-IF %ERRORLEVEL% EQU 0 goto :win_vista
-
-ver | findstr /i "6\.1\." > nul
-IF %ERRORLEVEL% EQU 0 goto :win_7
-
 IF EXIST C:\WINDOWS\COMMAND.COM goto :win_9x_me
 
+rem ==============================================================================
+
+:Other_windows
+
+echo "Hello, this version of Windows is not supported. GISAH is meant for Windows 2000 and lower. Sorry about that :("
 
 rem ==============================================================================
 
@@ -45,32 +41,9 @@ call ..\GISAH\os\win_2k.bat
 
 rem ==============================================================================
 
-:win_7
-
-call ..\GISAH\os\win_7.bat
-
-rem ==============================================================================
-
-:win_vista
-
-call ..\GISAH\os\win_vista.bat
-
-rem ==============================================================================
-
-:win_serv_2003
-
-call ..\GISAH\os\win_serv_2003.bat
-
-rem ==============================================================================
-
-:win_XP
-
-call ..\GISAH\os\win_xp.bat
-
-rem ==============================================================================
-
 :win_9x_me
 
 call ..\GISAH\os\win_9x.bat
 
 rem ==============================================================================
+
